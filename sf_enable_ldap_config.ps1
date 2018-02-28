@@ -1,3 +1,7 @@
+import-module solidfire
+
+connect-SFCluster -Target sfdemo1 -username admin -password Netapp1!
+
 Set-SFLdapAuthentication `
     -AuthType SearchAndBind `
     -ServerURIs 'ldap://dc1.demo.netapp.com' `
