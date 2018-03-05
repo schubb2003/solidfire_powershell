@@ -3,9 +3,7 @@ import-module solidfire
 $sfCluster = Read-host("Enter a SolidFire cluster to connect to: ")
 $creds = get-credential
 
-$user = $creds.username
-$password = ConvertTo-SecureString $creds.password -AsPlainText -Force
-$cred = New-Object -TypeName system.Management.Automation.PSCredential -ArgumentList $user,$password
+connect-SFCluster -Target $sfCluster -credential $creds
 
 Set-SFLdapAuthentication `
     -AuthType SearchAndBind `
